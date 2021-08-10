@@ -4,7 +4,6 @@ import com.codecool.webshopapi.model.Product;
 import com.codecool.webshopapi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
