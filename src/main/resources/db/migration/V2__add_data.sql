@@ -1,3 +1,3 @@
 INSERT INTO location (location_code, name) VALUES (8888, 'Budapest');
-INSERT INTO product (name, price) VALUES ('printed illustration', 25);
-INSERT INTO user_table (name, location) VALUES ('John Doe', 'Vienna');
+INSERT INTO user_table (name, location_id) VALUES ('John Doe', 1);
+INSERT INTO product (name, price, user_id) VALUES ('printed illustration', 25, 1);

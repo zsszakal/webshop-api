@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=webshop
+      - POSTGRES_USER=webshop
+      - POSTGRES_DB=webshop-db
+    expose:
+      - 5433
+    ports:
+      - "5433:5432"
+  web:
+    image: webshop
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  #  environment:
+ #     SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/webshop-db
+ # db_url: db
+  # db_port: "5432"
