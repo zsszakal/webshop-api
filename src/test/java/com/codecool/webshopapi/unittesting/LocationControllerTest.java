@@ -48,7 +48,7 @@ public class LocationControllerTest {
     }
 
     @Test
-    void add_inputRightLocation_shouldLocation() throws Exception {
+    void add_RightLocation_shouldReturnLocation() throws Exception {
         Location location = TEST_LOCATION;
         when(locationService.add(any())).thenReturn(location);
         mockMvc.perform(MockMvcRequestBuilders
@@ -64,7 +64,7 @@ public class LocationControllerTest {
     }
 
     @Test
-    void updateById_inputRightLocation_shouldReturnLocation() throws Exception {
+    void add_inputRightLocation_shouldReturnLocation() throws Exception {
         Long id = 1L;
         TEST_LOCATION.setId(id);
         Location location = TEST_LOCATION;

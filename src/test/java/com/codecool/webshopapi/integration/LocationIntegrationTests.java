@@ -12,9 +12,6 @@ import org.springframework.http.*;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.util.List;
-import java.util.Objects;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -63,23 +60,6 @@ public class LocationIntegrationTests {
         return new HttpEntity<>(testLocation, headers);
     }
 
-    private boolean equalsWithId(Location location, Object object) {
-        if (location == object) return true;
-        if (location == null || object == null || location.getClass() != object.getClass()) return false;
-
-        Location otherLocation = (Location) object;
-
-        if (!Objects.equals(location.getId(), otherLocation.getId())) return false;
-        if (!Objects.equals(location.getName(), otherLocation.getName())) return false;
-        return true;
-    }
-
-    private boolean contain(List<Location> locations, Location location) {
-        for (Location otherLocation : locations) {
-            if (equalsWithId(location, otherLocation)) return true;
-        }
-        return false;
-    }
 
     private Location createLocation(int locationCode, String name) {
         Location location = new Location();
