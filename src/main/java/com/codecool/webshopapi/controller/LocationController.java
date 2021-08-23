@@ -3,6 +3,7 @@ package com.codecool.webshopapi.controller;
 import com.codecool.webshopapi.model.Location;
 import com.codecool.webshopapi.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -30,8 +31,8 @@ public class LocationController {
     }
 
     @GetMapping
-    public List<Location> getAll() {
-        return locationService.getAll();
+    public ResponseEntity<?> getAll() {
+        return ResponseEntity.ok(locationService.getAll());
     }
 
     @DeleteMapping("/{id}")
